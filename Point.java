@@ -32,5 +32,14 @@ public class Point{
       return new Point(this); //since you have a constructor that does the same thing!
     }
 
-  
+  public double distanceTo(Point other)
+    {
+      ~~
+    }
+
+  public boolean equals(Point other)
+    {
+      ~~
+    }
+
 }
