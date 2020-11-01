@@ -1,6 +1,6 @@
 public class Triangle{
 
-  private Point v1, v2, v2;
+  private Point v1, v2, v3;
 
 //constructors
   public Triangle(Point a, Point b, Point c)
@@ -8,13 +8,6 @@ public class Triangle{
       v1 = a;
       v2 = b;
       v3 = c;
-    }
-
-  public Sides()
-    {
-      a = v1.distanceTo(v2);
-      b = v2.distanceTo(v3);
-      c = v3.distanceTo(v1);
     }
 
   public Triangle(double x1, double y1, double x2, double y2, double x3, double y3)
@@ -27,35 +20,40 @@ public class Triangle{
 //accessors
   public double getPerimeter()
     {
-      Sides();
+      double a = v1.distanceTo(v2);
+      double b = v2.distanceTo(v3);
+      double c = v3.distanceTo(v1);
       return a + b + c;
     }
 
   public double getArea()
     {
-      Sides();
+      double a = v1.distanceTo(v2);
+      double b = v2.distanceTo(v3);
+      double c = v3.distanceTo(v1);
       double s = (a + b + c)/2;
-      return Math.sqrt(s(s-a)(s-b)(s-c));
+      return Math.sqrt(s*(s-a)*(s-b)*(s-c));
     }
 
   public double rounded(double n)
     {
-      n = Math.round(n*10000)/10000;
+      n = Math.round(n*10000);
+      n = n/10000;
+      return n;
     }
 
-  public String classfiy()
+  public String classify()
     {
-      Sides();
-      a1 = rounded(a);
-      b1 = rounded(b);
-      c1 = rounded(c);
+      double a = rounded(v1.distanceTo(v2));
+      double b = rounded(v2.distanceTo(v3));
+      double c = rounded(v3.distanceTo(v1));
 
-      if (a1 == b1 && b1 == c1))
-        return "Equilateral";
-      else if (a1 == b1 || b1 == c1)
-        return "Isosceles";
+      if (a == b && b == c)
+        return "equilateral";
+      else if (a == b || b == c || c == a)
+        return "isosceles";
       else
-        return "Scalene";
+        return "scalene";
     }
 
   public String toString()
@@ -68,14 +66,12 @@ public class Triangle{
 //mutator
   public void setVertex(int index, Point newP)
     {
-      if index == 0
+      if (index == 0)
         v1 = newP;
-      if index == 1
+      if (index == 1)
         v2 = newP;
-      if index == 2
-        v3 = newP;
       else
-        return "error";
+        v3 = newP;
     }
 
 }

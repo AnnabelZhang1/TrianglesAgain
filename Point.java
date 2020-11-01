@@ -1,5 +1,5 @@
 public class Point{
-  
+
   private double x,y;
 
   //construct a point given coordinates
@@ -26,21 +26,15 @@ public class Point{
       return y;
     }
 
-  public Point copy()
-    {   //objects need a method to make identical copies of them, since assignment copies the reference, it is redundant in  this case
-    //return new Point(x,y); //using this.x and this.y
-    //OR
-      return new Point(this); //since you have a constructor that does the same thing!
-    }
-
   public double distanceTo(Point other)
     {
-      Math.sqrt(Math.pow((other.getX - this.x), 2) + (Math.pow((other.getY - this.y), 2)));
+      return Math.sqrt(Math.pow((other.getX() - this.getX()), 2)
+             + (Math.pow((other.getY() - this.getY()), 2)));
     }
 
   public boolean equals(Point other)
     {
-      return other.getX == this.x && other.getY == this.y;
+      return other.getX() == this.getX() && other.getY() == this.getY();
     }
 
 }
