@@ -50,9 +50,9 @@ public class Triangle{
       b1 = rounded(b);
       c1 = rounded(c);
 
-      if a1 == b1 && b1 == c1
+      if (a1 == b1 && b1 == c1))
         return "Equilateral";
-      else if a1 == b1 || b1 == c1
+      else if (a1 == b1 || b1 == c1)
         return "Isosceles";
       else
         return "Scalene";
@@ -68,7 +68,14 @@ public class Triangle{
 //mutator
   public void setVertex(int index, Point newP)
     {
-      ~~
+      if index == 0
+        v1 = newP;
+      if index == 1
+        v2 = newP;
+      if index == 2
+        v3 = newP;
+      else
+        return "error";
     }
 
 }
